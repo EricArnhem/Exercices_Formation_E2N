@@ -1,0 +1,79 @@
+body{
+    background-color: lightgrey;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #333333;
+}
+
+div{
+    text-align: center;
+}
+
+#buttons{
+    margin-top: 125px;
+}
+
+#gif{
+    margin-top: 20px;
+}
+
+img{
+    width: 30%;
+}
+
+button{
+    background-color: #53c1ab;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 32px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    background-color: #387064;
+}
+
+p{
+    font-size: 30px;
+    text-align: center;
+}
+
+#before_part{
+    float: left;
+}
+
+#before_part button{
+    background-color: #FF5DD4;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    cursor: pointer;
+}
+
+#before_part button:hover{
+    background-color: #873070;
+}
+
+#after_part{
+    float: right;
+}
+
+#after_part button{
+    background-color: #575db2;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 25px;
+    color: white;
+    cursor: pointer;
+}
+
+#after_part button:hover{
+    background-color: #2a2d59;
+}

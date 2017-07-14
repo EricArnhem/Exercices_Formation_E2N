@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 1 Javascript</title>
+  </head>
+  <body>
+      <img src="images/image1.jpg" onmouseover="changeSRC(this, 'images/image2.jpg');" onmouseout="changeSRC(this, 'images/image1.jpg');" id="image1" />
+      <script>
+      // Fonction qui va changer la source de l'image lorsque le curseur entre et sort de l'élément
+        function changeSRC(image, new_src){
+          image.setAttribute('src', new_src);
+        }
+      </script>
+  </body>
+</html>

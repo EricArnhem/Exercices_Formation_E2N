@@ -1,0 +1,12 @@
+body{
+    background-color: lightgrey;
+}
+
+h1{
+    border: 5px solid blueviolet;
+    font-size: 100px;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 5px 5px grey;
+}

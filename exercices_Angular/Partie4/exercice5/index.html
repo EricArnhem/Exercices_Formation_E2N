@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercice 5</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+        <style>
+            p{
+                background-color: lightgrey;
+                line-height: 30px;
+            }
+            .show_hide_buttons{
+                background-color: blueviolet;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px; 
+                width: 200px;
+                border-radius: 3px;
+            }
+        </style>
+    </head>
+    <body ng-app>
+        <div class="show_hide_buttons">
+            <button type="button" name="show" ng-click="showPara = true">Afficher</button>
+            <button type="button" name="hide" ng-click="showPara = false">Cacher</button>
+        </div>
+        <p ng-show="showPara">Les abeilles (Anthophila) forment un clade d'insectes hyménoptères de la superfamille des apoïdes. Au moins 20 000 espèces d'abeilles sont répertoriées sur la planète dont environ 2 000 en Europe et près de 1 000 en France. En Europe, l'espèce la plus connue est Apis mellifera qui, comme la plupart des abeilles à miel, appartient au genre Apis. Cependant, la majorité des abeilles ne produisent pas de miel. Elles se nourrissent du nectar des fleurs. Une abeille peut vivre jusqu'à 10 mois.
+Les abeilles peuvent être classées selon leur mode de vie : abeilles domestiques, sauvages, solitaires ou bien sociales, etc. Les abeilles sont nettement distinctes des guêpes par leur morphologie et leur comportement. Les bourdons en revanche sont un groupe particulier d'abeilles.</p>
+
+        <div>
+            <a href="../exercice1/index.html"><button>Exercice 1</button></a>
+            <a href="../exercice2/index.html"><button>Exercice 2</button></a>
+            <a href="../exercice3/index.html"><button>Exercice 3</button></a>
+            <a href="../exercice4/index.html"><button>Exercice 4</button></a>
+            <a href="../exercice6/index.html"><button>Exercice 6</button></a>
+        </div>
+    </body>
+</html>

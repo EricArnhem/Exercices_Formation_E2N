@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice Canvas 1</title>
+    <style>
+      canvas{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="maison" width="400" height="400"></canvas>
+    <a href="../exercice2/index.html"><button type="button" name="button">Exercice 2</button></a>
+    <a href="../exercice3/index.html"><button type="button" name="button">Exercice 3</button></a>
+    <a href="cheminee.html"><button type="button" name="button">Maison Plus</button></a>
+    <script>
+    // On sélectionne le canvas
+    var c = document.getElementById("maison");
+    // On dit que c'est un canvas en 2d
+    var ctx = c.getContext("2d");
+    // Toit de la maison
+    ctx.beginPath(); // Début du chemin
+    ctx.moveTo(200,20); // Le tracé part du point 200,20
+    ctx.lineTo(125,100); // Un segment est ajouté vers 125,50
+    ctx.lineTo(275,100); // Un segment est ajouté vers 275,100
+    ctx.lineTo(200,20); // Un segment est ajouté vers 200,20 pour retourner au point de départ
+    ctx.fillStyle = "#D38435"; // Couleur de remplissage
+    ctx.fill(); // Application du remplissage
+
+    // Mur de la maison
+    ctx.beginPath();
+    ctx.moveTo(125,100);
+    ctx.lineTo(125,250);
+    ctx.lineTo(275,250);
+    ctx.lineTo(275,100);
+    ctx.fillStyle = "#A4D7E7";
+    ctx.fill();
+
+    // Fenêtres et porte de la maison
+    ctx.beginPath();
+    // Fenêtre de gauche
+    ctx.moveTo(140,115);
+    ctx.lineTo(140,145);
+    ctx.lineTo(170,145);
+    ctx.lineTo(170,115);
+    ctx.lineTo(140,115);
+    // Fenêtre de droite
+    ctx.moveTo(260,115);
+    ctx.lineTo(260,145);
+    ctx.lineTo(230,145);
+    ctx.lineTo(230,115);
+    ctx.lineTo(260,115);
+    // Porte
+    ctx.moveTo(180,190);
+    ctx.lineTo(180, 250);
+    ctx.lineTo(220, 250);
+    ctx.lineTo(220, 190);
+    ctx.lineTo(180, 190);
+    ctx.fillStyle = "#C9C9C9";
+    ctx.fill();
+    </script>
+  </body>
+</html>

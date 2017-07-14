@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+
+[class*="col"] { margin-bottom: 20px; }
+
+    img { width: 100%; }
+
+    body { margin-top: 10px; }

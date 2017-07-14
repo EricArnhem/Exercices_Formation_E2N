@@ -1,0 +1,32 @@
+.navbar{
+    border-radius: 0;
+}
+
+h1, h2{
+    background-color: lightgrey;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.div_user_info{
+    border: 2px solid grey;
+    border-radius: 10px;
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/99473989859195683/C8D866506C4BF8F310CBAA57E6818AD63DFBE843/');
+    background-size: cover;
+    background-color: lightgrey;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#sort_menu{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.user_info{
+    color: white;
+}
+
+#show_all_users{
+    margin-bottom: 10px;
+}

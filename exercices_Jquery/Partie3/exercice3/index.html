@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 3</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="inputNumber" id="inputNumber">
+      <button type="button" name="myButton" id="myButton" >Tester le nombre</button>
+      <p id="result"></p>
+    </form>
+    <script>
+    $(function(){
+      // Déclaration de la variable i qui est un nombre aléatoire entre 1 et 100 + nbTentatives qui compte le nombre de tentatives
+      var i = Math.floor((Math.random() * 100) + 1);
+      var nbTentatives = 0;
+      // Fonction qui va comparer la valeur de l'input avec i et afficher un message en fonction
+      $('#myButton').click(function(){
+        var valeurInput = parseInt($('#inputNumber').val());
+        nbTentatives++;
+        // Si la valeur n'est pas un nombre : On affiche 'Il faut entrer un nombre'
+        if($.isNumeric(valeurInput) == false){
+          $('#result').text('Il faut entrer un nombre');
+        } else if(valeurInput == i){
+          // Si c'est le bon nombre : on affiche correct en avec le nombre de tentatives
+          $('#result').text('Correct en : ' + nbTentatives);
+        } else if(valeurInput < i){
+          // Si la valeur entrée est inférieure à i on affiche 'Plus'
+          $('#result').text('Plus');
+        } else {
+          // Sinon on affiche 'Moins'
+          $('#result').text('Moins');
+        }
+      });
+    });
+    </script>
+  </body>
+</html>

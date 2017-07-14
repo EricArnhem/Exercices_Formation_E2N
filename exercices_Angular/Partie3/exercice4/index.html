@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="testCtrl">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        div{
+            height: 30px;
+            width:  100px;
+            text-align: center;
+            padding-top: 10px;
+            background-color: lightgrey;
+            border: 2px solid blueviolet;
+        }
+    </style>
+  </head>
+  <body>
+    <div>
+        <!-- Ajout du filtre currency qui filtre la variable pi et la transforme en monnaie -->
+        {{pi | currency}}
+    </div>
+    <a href="../exercice1/index.html"><button>Exercice 1</button></a>
+    <a href="../exercice2/index.html"><button>Exercice 2</button></a>
+    <a href="../exercice3/index.html"><button>Exercice 3</button></a>
+    <a href="../exercice5/index.html"><button>Exercice 5</button></a>
+    <a href="../exercice6/index.html"><button>Exercice 6</button></a>
+    <a href="../exercice7/index.html"><button>Exercice 7</button></a>
+  </body>
+</html>

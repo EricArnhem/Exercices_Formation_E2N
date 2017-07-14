@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 4</title>
+    <style>
+      #rectangle{
+        height: 10px;
+        width: 150px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <button type="button" name="buttonHeight" id="buttonHeight">Hauteur +10px</button>
+      <button type="button" name="buttonGreen" id="buttonGreen">Vert</button>
+      <button type="button" name="buttonIni" id="buttonIni">Couleurs initiales</button>
+      <button type="button" name="buttonHide" id="buttonHide">Masquer</button>
+      <button type="button" name="buttonShow" id="buttonShow">Afficher</button>
+    </form>
+    <div id="rectangle"></div>
+    <script>
+    $(function(){
+      var height = 10;
+      // Bouton qui augmente la taille de 10px et si la taille dépasse 100px la remet à 10px
+      $('#buttonHeight').click(function(){
+        var heightValue = $('#rectangle').css('height');
+        if(heightValue == '100px'){
+          $('#rectangle').css('height', '10px');
+        } else {
+          $('#rectangle').css('height', '+=10px');
+        }
+      });
+      // Bouton qui met le rectangle en vert
+      $('#buttonGreen').click(function(){
+        $('#rectangle').css('backgroundColor', 'green');
+      });
+      // Bouton qui remet les couleurs initiales
+      $('#buttonIni').click(function(){
+        $('#rectangle').css('backgroundColor', 'white');
+      });
+      // Bouton cache le rectangle
+      $('#buttonHide').click(function(){
+        $('#rectangle').hide();
+      });
+      // Bouton qui affiche le rectangle
+      $('#buttonShow').click(function(){
+        $('#rectangle').show();
+      });
+    });
+    </script>
+  </body>
+</html>

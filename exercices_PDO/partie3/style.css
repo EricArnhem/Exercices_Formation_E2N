@@ -1,0 +1,42 @@
+.navbar{
+    border-radius: 0;
+}
+
+h1{
+  background-color: lightgrey;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+  padding-top: 60px;
+  font-size: 40px;
+}
+
+p{
+  text-align: center;
+}
+
+.div_clients_list{
+  border-right: 1px solid grey;
+  padding: 0px;
+}
+
+.h2_lists{
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+.div_tp{
+    height: 200px;
+    border: 1px solid grey;
+    color: white;
+    background-image: url('https://pbs.twimg.com/media/DBk4KadXcAEmqpW.jpg:large');
+    background-size: cover;
+    background-position-y: 480px;
+}
+
+.div_tp:hover{
+    text-decoration: underline;
+}

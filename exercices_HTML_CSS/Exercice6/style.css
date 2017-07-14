@@ -1,0 +1,62 @@
+#vert {
+  float: left;
+  background-color: #2ECC71;
+  height: 50px;
+  width: 80%;
+}
+
+#bleu {
+  float: left;
+  background-color: #2980B9;
+  height: 50px;
+  width: 20%;
+}
+
+#rouge {
+  float: left;
+  background-color: #E74C3C;
+  height: 150px;
+  width: 35%;
+}
+
+#orangeClair {
+  float: left;
+  background-color: #E67E22;
+  height: 75px;
+  width: 35%;
+}
+
+#jaune {
+  float: left;
+  background-color: #F39C12;
+  height: 75px;
+  width: 25%;
+}
+
+#gris {
+  float: left;
+  background-color: #95A5A6;
+  height: 75px;
+  width: 30%;
+}
+
+#bleuVert {
+  float: left;
+  background-color: #16A085;
+  height: 75px;
+  width: 25%;
+}
+
+#orange {
+  float: left;
+  background-color: #D35400;
+  height: 75px;
+  width: 15%;
+}
+
+#bleuFonce {
+  float: left;
+  background-color: #2C3E50;
+  height: 200px;
+  width: 100%;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice Canvas 1</title>
+    <style>
+      canvas{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="maison" width="400" height="400"></canvas>
+    <a href="../exercice2/index.html"><button type="button" name="button">Exercice 2</button></a>
+    <a href="../exercice3/index.html"><button type="button" name="button">Exercice 3</button></a>
+    <a href="index.html"><button type="button" name="button">Maison normale</button></a>
+    <script>
+    // On sélectionne le canvas
+    var c = document.getElementById("maison");
+    // On dit que c'est un canvas en 2d
+    var ctx = c.getContext("2d");
+    // Toit de la maison
+    ctx.beginPath(); // Début du chemin
+    ctx.moveTo(200,20); // Le tracé part du point 200,20
+    ctx.lineTo(125,100); // Un segment est ajouté vers 125,50
+    ctx.lineTo(275,100); // Un segment est ajouté vers 275,100
+    ctx.lineTo(200,20); // Un segment est ajouté vers 200,20 pour retourner au point de départ
+    ctx.fillStyle = "#D38435"; // Couleur de remplissage
+    ctx.fill(); // Application du remplissage
+
+    // Mur de la maison
+    ctx.beginPath();
+    ctx.moveTo(125,100);
+    ctx.lineTo(125,250);
+    ctx.lineTo(275,250);
+    ctx.lineTo(275,100);
+    ctx.fillStyle = "#A4D7E7";
+    ctx.fill();
+
+    // Fenêtres et porte de la maison
+    ctx.beginPath();
+    // Fenêtre de gauche
+    ctx.moveTo(140,115);
+    ctx.lineTo(140,145);
+    ctx.lineTo(170,145);
+    ctx.lineTo(170,115);
+    ctx.lineTo(140,115);
+    // Fenêtre de droite
+    ctx.moveTo(260,115);
+    ctx.lineTo(260,145);
+    ctx.lineTo(230,145);
+    ctx.lineTo(230,115);
+    ctx.lineTo(260,115);
+    // Porte
+    ctx.moveTo(180,190);
+    ctx.lineTo(180, 250);
+    ctx.lineTo(220, 250);
+    ctx.lineTo(220, 190);
+    ctx.lineTo(180, 190);
+    ctx.fillStyle = "#C9C9C9";
+    ctx.fill();
+    ctx.stroke();
+    
+    // Hublot
+    ctx.beginPath();
+    ctx.arc(200, 60, 15, 0, Math.PI*2, false);
+    ctx.fill();
+    ctx.stroke();
+
+    // Cheminée
+    ctx.beginPath();
+    ctx.moveTo(237, 61);
+    ctx.lineTo(237, 30);
+    ctx.lineTo(257, 30);
+    ctx.lineTo(257, 81);
+    ctx.fillStyle = "#e25656";
+    ctx.fill();
+
+    // Tête du Personnage
+    ctx.beginPath();
+    ctx.fillStyle = "#f4e8a8";
+    ctx.arc(75, 230, 10, 0, Math.PI*2, false);
+    ctx.fill();
+    ctx.stroke();
+
+    // Bras, corps et jambes
+    ctx.beginPath();
+    // Corps
+    ctx.moveTo(75, 240);
+    ctx.lineTo(75, 270);
+    // Bras gauche
+    ctx.moveTo(75, 255);
+    ctx.lineTo(65, 245);
+    // Bras droit
+    ctx.moveTo(75,255);
+    ctx.lineTo(85, 245);
+    // Jambe gauche
+    ctx.moveTo(75, 270);
+    ctx.lineTo(70, 280);
+    // Jambe droite
+    ctx.moveTo(75, 270);
+    ctx.lineTo(80, 280);
+    ctx.stroke();
+
+    // Chemin
+    ctx.beginPath();
+    ctx.moveTo(0, 400);
+    ctx.lineTo(200, 330);
+    ctx.lineTo(200, 330);
+    ctx.lineTo(200, 250);
+    ctx.lineWidth = 30;
+    ctx.lineJoin = "round";
+    ctx.lineCap = "bevel";
+    ctx.strokeStyle = "#d6b457";
+    ctx.stroke();
+
+    // Tronc de l'arbre
+    ctx.beginPath();
+    ctx.lineWidth = 20;
+    ctx.lineCap = "bevel";
+    ctx.strokeStyle = "#845d39";
+    ctx.moveTo(350, 370);
+    ctx.lineTo(350, 300);
+    ctx.stroke();
+
+    // Feuilles de l'arbre
+    ctx.beginPath();
+    ctx.fillStyle = "#71b74e";
+    ctx.arc(350, 300, 20, 0, Math.PI*2, false);
+    ctx.moveTo(335, 295);
+    ctx.arc(335, 295, 20, 0, Math.PI*2, false);
+    ctx.moveTo(365, 295);
+    ctx.arc(365, 295, 20, 0, Math.PI*2, false);
+    ctx.moveTo(350, 280);
+    ctx.arc(350, 280, 20, 0, Math.PI*2, false);
+    ctx.fill();
+
+    // Soleil
+    ctx.beginPath();
+    ctx.arc(400, 10, 40, 0, Math.PI*2, false);
+    ctx.fillStyle = "#efe637";
+    ctx.fill();
+    </script>
+  </body>
+</html>

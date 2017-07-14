@@ -1,0 +1,23 @@
+.navbar{
+    border-radius: 0;
+}
+
+h1, h2{
+  background-color: lightgrey;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+.div_clients_list{
+  border-right: 1px solid grey;
+  padding: 0px;
+}
+
+.h2_lists{
+  margin: 0px;
+  margin-bottom: 10px;
+}

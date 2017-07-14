@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks -Multiviews
+RewriteEngine on
+RewriteRule ^$ /listClients
+RewriteRule ^listClients$ /index.php?tab=listClients
+RewriteRule ^createClient$ /index.php?tab=createClient
+RewriteRule ^(detailClient/)([0-9]+)$ /index.php?tab=detailClient&client=$2
+RewriteRule ^addCredit$ /index.php?tab=addCredit
+</IfModule>
+

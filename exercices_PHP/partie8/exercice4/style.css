@@ -1,0 +1,36 @@
+body{
+    background-color: lightgrey;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #333333;
+}
+
+a{
+    margin-left: 43%;
+    background-color: #03ce6f;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 32px;
+    color: white;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #00914d;
+}
+
+p{
+    font-size: 25px;
+    text-align: center;
+}
+
+form{
+    text-align: center;
+    margin-bottom: 15px;
+}

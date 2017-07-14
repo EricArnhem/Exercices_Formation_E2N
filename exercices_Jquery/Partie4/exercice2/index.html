@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="salaire">Votre salaire brut:</label><input type="text" name="salaire" id="salaire"><br>
+      <label for="genre">Votre genre:</label>
+      <select id="genre">
+        <option value="1" id="homme">Homme</option>
+        <option value="2" id="femme">Femme</option>
+      </select><br>
+      <label for="enfants">Nombres d'enfants :</label><input type="text" name="enfants" id="enfants"> <br>
+      <button type="button" name="valider" id="valider">Valider</button>
+      <p>Salaire net: <span id="salaireFinal"></span></p>
+    </form>
+    <script>
+    $(function(){
+        genre = $('#genre').val(); // Récupération de la valeur de l'option sélectionnée au départ
+        $("#genre").on('change',function(){ // Récupération de la valeur de l'option sélectionnée au changement
+        genre = $('#genre').val();
+      });
+      $('#valider').click(function(){
+        // Récupération de la valeur du salaire et du nombre d'enfants
+        var salaire = $('#salaire').val();
+        var enfants = $('#enfants').val();
+        // Déclaration des variables qui contiennent les valeurs des frais + leur total
+        var charges = parseFloat((salaire * 0.18).toFixed(2)); // Charges = 18% du salaire
+        var assurance = parseFloat((salaire * 0.07).toFixed(2)); // Assurance = 7% du salaire
+        var cotisations = parseFloat((salaire * 0.05).toFixed(2)); // Cotisations = 5% du salaire
+        var total = charges + assurance + cotisations;
+        // Conditions qui testent si c'est un homme ou une femme et le nombres d'enfants
+        if(genre == 2 && enfants == 3){ // Si femme et 3 enfants
+          salaire = salaire - parseFloat((total - (total * 0.03)).toFixed(2)); // Salaire = Salaire - (total des charges -3%)
+        } else if(genre == 2 && enfants >= 4){ // Si femme et + de 4 enfants
+          salaire = salaire - parseFloat((total - (total * 0.04)).toFixed(2)); // Salaire = Salaire - (total des charges -4%)
+        } else if(genre == 2 || (genre == 1 && enfants == 4)){ // Si femme avec moins de 3 enfants ou homme avec 4 enfants
+          salaire = salaire - parseFloat((total - (total * 0.02)).toFixed(2)); // Salaire = Salaire - (total des charges -2%)
+        } else if(genre == 1 && enfants == 3){ // Si homme et 3 enfants
+          salaire = salaire - parseFloat((total - (total * 0.01)).toFixed(2)); // Salaire = Salaire - (total des charges -3%)
+        } else if(genre == 1){ // Si homme
+          salaire = salaire - total; // Salaire = Salaire - total des charges
+        }
+        $('#salaireFinal').text(salaire);
+      });
+    });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 3</title>
+  </head>
+  <body>
+    <form>
+      <label for="nom">Nom: </label><input type="text" name="nom" id="nom"><br><br>
+      <label for="prenom">Prénom: </label><input type="text" name="prenom" id="prenom"><br><br>
+      <label for="mail">Adresse e-mail: </label><input type="text" name="mail" id="mail"><br><br>
+      <label for="phone">Numéro de téléphone: </label><input type="text" name="phone" id="phone">
+    </form>
+    <script>
+    $(function(){
+      var name_regex = /^\D+[-]?\D+/i;
+      var mail_regex = /^[\w\-\.]+[a-z0-9]@[\w\-\.]+[a-z0-9]\.[a-z]/i;
+      var phone_regex = /^0[1-9]([ \.\-\/,]?\d{2}){4}/;
+      // Fonction qui ajoute une box-shadow rouge si les données entrées sont un nombre
+      $('#nom').focusout(function(){
+        var nom = $('#nom').val();
+        if(nom.match(name_regex)){
+          $('#nom').css('box-shadow', 'none'); // Si on supprime la box-shadow au cas où elle a été affichée si erreur
+        } else{
+          $('#nom').css('box-shadow', '0px 0px 2px 1px red'); // Sinon c'est un nombre on ajoute une box-shadow rouge
+        }
+      });
+      $('#prenom').focusout(function(){
+        var prenom = $('#prenom').val();
+        if(prenom.match(name_regex)){
+          $('#prenom').css('box-shadow', 'none'); // Si on supprime la box-shadow au cas où elle a été affichée si erreur
+        } else{
+          $('#prenom').css('box-shadow', '0px 0px 2px 1px red'); // Sinon c'est un nombre on ajoute une box-shadow rouge
+        }
+      });
+      $('#mail').focusout(function(){
+        var mail = $('#mail').val();
+        if(mail.match(mail_regex)){
+          $('#mail').css('box-shadow', 'none'); // Si on supprime la box-shadow au cas où elle a été affichée si erreur
+        } else{
+          $('#mail').css('box-shadow', '0px 0px 2px 1px red'); // Sinon c'est un nombre on ajoute une box-shadow rouge
+        }
+      });
+      $('#phone').focusout(function(){
+        var phone = $('#phone').val();
+        if(phone.match(phone_regex)){
+          $('#phone').css('box-shadow', 'none'); // Si on supprime la box-shadow au cas où elle a été affichée si erreur
+        } else{
+          $('#phone').css('box-shadow', '0px 0px 2px 1px red'); // Sinon c'est un nombre on ajoute une box-shadow rouge
+        }
+      });
+    });
+    </script>
+  </body>
+</html>

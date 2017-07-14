@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="jquery-2.2.4.js"></script>
+        <title>Exercice 5</title>
+        <style>
+            #square{
+                height: 390px;
+                width: 250px;
+                position: relative;
+                background-image: url("https://img.pr0gramm.com/2016/09/21/cb1647f2a4841ac3.gif");
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="inputSquare" id="inputSquare">
+            <div id="square"></div>
+        </form>
+        <script>
+            $(function () {
+                var window_width = $(window).width();
+                var window_height = $(window).height();
+                //Détecte quelle touche est pressée et la bouge dans la direction associée
+                $(document).keydown(function (e) {
+                    var top = $('#square').offset().top;
+                    var left = $('#square').offset().left;
+
+                    switch (e.keyCode) {
+                        // Touche flèche gauche
+                        case 37:
+                            if (left > 0) {
+                                $('#square').finish().animate({
+                                    left: '-=10'
+                                });
+                            } else {
+                                $("#square").finish().animate({
+                                    left: window_width - 250
+                                });
+                            }
+                            break;
+                            // Touche flèche haut
+                        case 38:
+                            if (top > 0) {
+                                $('#square').finish().animate({
+                                    top: '-=10'
+                                });
+                            } else {
+                                $("#square").finish().animate({
+                                    top: window_height - 390
+                                });
+                            }
+                            break;
+                            // Touche flèche droite
+                        case 39:
+                            // Si le côté gauche du carré n'est pas au bord droit de la fenêtre
+                            if (left < (window_width - 250)) {
+                                $('#square').finish().animate({
+                                    left: '+=10'
+                                });
+                            } // Sinon le côté gauche du carré arrive au bord droit de la fenêtre
+                            else {
+                                $("#square").finish().animate({
+                                    left: 0
+                                });
+                            }
+                            break;
+                            //Touche flèche bas
+                        case 40:
+                            if (top < (window_height - 390)) {
+                                $('#square').finish().animate({
+                                    top: '+=10'
+                                });
+                            } else {
+                                $("#square").finish().animate({
+                                    top: 0
+                                });
+                            }
+                        default:
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

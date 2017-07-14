@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <style>
+      p{
+        display: inline;
+      }
+      .div_count{
+        padding-left: 110px;
+        background-color: lightgrey;
+        width: 195px;
+      }
+      .buttons{
+        margin-top: 15px;
+        background-color: blueviolet;
+        width: 310px;
+      }
+    </style>
+  </head>
+  <!-- On initialise l'application avec ng-app -->
+  <body ng-app>
+    <!-- On initialise la variable count à 0 -->
+    <div class="div_count" ng-init="count=0">
+      <!-- Au clic sur le bouton - on enlève 1 à la variable count, au clic sur + on ajoute 1 -->
+      <button ng-click="count = count - 1">-</button>
+      <p>{{count}}</p>
+      <button ng-click="count = count + 1">+</button>
+    </div>
+
+    <div class="buttons">
+      <a href="../exercice2/index.html"><button>Exercice 2</button></a>
+      <a href="../exercice3/index.html"><button>Exercice 3</button></a>
+      <a href="../exercice4/index.html"><button>Exercice 4</button></a>
+      <a href="../exercice5/index.html"><button>Exercice 5</button></a>
+      <a href="../exercice6/index.html"><button>Exercice 6</button></a>
+    </div>
+  </body>
+</html>

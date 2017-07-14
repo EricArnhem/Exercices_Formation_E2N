@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="schoolApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        div{
+            background-color: slateblue;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            padding-top: 20px;
+            border: 3px solid black;
+            margin-bottom: 10px;  
+        }
+    </style> 
+  </head>
+  <body ng-controller="studentsCtrl">
+    <div>
+        {{ firstName + ' ' + lastName + ', ' + age + ' ans' + ' en ' + grade }}
+    </div>
+      <a href="../exercice1/index.html"><button>Exercice 1</button></a>
+      <a href="../exercice2/index.html"><button>Exercice 2</button></a>
+      <a href="../exercice4/index.html"><button>Exercice 4</button></a>
+      <a href="../exercice5/index.html"><button>Exercice 5</button></a>
+</body>
+</html>

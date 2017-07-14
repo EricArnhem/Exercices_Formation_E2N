@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice 5 Javascript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <label for="premier_nombre">Premier nombre : </label><input type="text" id="premier_nombre" name="premier_nombre"/><br/>
+    <label for="deuxieme_nombre">Deuxième nombre : </label><input type="text" id="deuxieme_nombre" name="deuxieme_nombre"/><br/>
+    <button  id="valider" onclick="check()" name ="valider">Valider</button>
+  </form>
+</body>
+<script>
+/* Fonction qui permet de récupérer les deux nombres, de transformer leurs types en number puis de multiplier les deux et d'afficher
+le résultat */
+  function check(){ //"check" se retrouve dans le html avec onClick
+    var first = document.getElementById('premier_nombre').value;
+    var second = document.getElementById('deuxieme_nombre').value;
+    if (isNaN(first) || isNaN(second)){ // si la valeur n'est pas un nombre: alert('Il faut des nombres')
+      alert('Il faut des nombres');
+    } else { //sinon tu me donne le résultat de la multiplication
+      var result = parseInt(first) * parseFloat(second);
+      alert(result);
+      }
+  }
+</script>
+</html>

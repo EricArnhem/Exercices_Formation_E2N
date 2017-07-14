@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 4</title>
+  </head>
+  <body>
+    <form>
+      <label for="nom">Nom: </label><input type="text" name="nom" id="nom"><br><br>
+      <label for="prenom">Prénom: </label><input type="text" name="prenom" id="prenom"><br><br>
+      <label for="naissance">Date de naissance (jj/mm/aa): </label><input type="text" name="naissance" id="naissance"><br><br>
+      <label for="lieu">Lieu de naissance: </label><input type="text" name="lieu" id="lieu"><br><br>
+      <label for="emploi">Emploi: </label><input type="text" name="emploi" id="emploi"><br><br>
+      <label for="societe">Société: </label><input type="text" name="societe" id="societe"><br><br>
+      <button type="button" name="generer" id="generer">Générer</button>
+    </form>
+    <p id="result"></p>
+    <script>
+    $(function(){
+      var name_regex = /^\D+[-]?\D+/i;
+      var born_regex = /^((0[1-9])|([12][0-9])|(3[01]))[ \/\.\-]((0[1-9])|(1[012]))[ \/\.\-](((19)\d{2})|((200[0-1])))/;
+      var isCorrect = true;
+      // Fonctions qui vérifient les données entrées
+      $('#nom').focusout(function(){
+        var nom = $('#nom').val();
+        if(nom.match(name_regex)){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#nom').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#nom').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      $('#prenom').focusout(function(){
+        var prenom = $('#prenom').val();
+        if(prenom.match(name_regex)){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#prenom').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#prenom').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      $('#naissance').focusout(function(){
+        var naissance = $('#naissance').val();
+        if(naissance.match(born_regex)){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#naissance').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#naissance').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      $('#lieu').focusout(function(){
+        var lieu = $('#lieu').val();
+        if(lieu != ''){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#lieu').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#lieu').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      $('#emploi').focusout(function(){
+        var emploi = $('#emploi').val();
+        if(emploi != ''){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#emploi').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#emploi').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      $('#societe').focusout(function(){
+        var societe = $('#societe').val();
+        if(societe != ''){
+          // On supprime la box-shadow si on a le résultat attendu
+          $('#societe').css('box-shadow', 'none');
+          isCorrect = true;
+        } else{
+          // Sinon c'est un nombre on ajoute une box-shadow rouge
+          $('#societe').css('box-shadow', '0px 0px 2px 1px red');
+          isCorrect = false;
+        }
+      });
+      // Fonction qui se lance au clic du bouton générer
+      $('#generer').click(function(){
+        // Récupère toutes la valeurs des inputs puis créer une phrase avec celles-ci
+        var nom = $('#nom').val();
+        var prenom = $('#prenom').val();
+        var naissance = $('#naissance').val();
+        var lieu = $('#lieu').val();
+        var emploi = $('#emploi').val();
+        var societe = $('#societe').val();
+
+        if(isCorrect == true){
+          // Si toutes les valeurs sont correctes on affiche le message
+          $('#result').text(prenom + ' ' + nom + ', né le ' + naissance + ' à ' + lieu + ', actuellement ' + emploi + ' à ' + societe);
+        } else{
+          // Sinon on affiche une alerte
+          alert('Les informations sont incorrectes !');
+        }
+      });
+    });
+    </script>
+  </body>
+</html>

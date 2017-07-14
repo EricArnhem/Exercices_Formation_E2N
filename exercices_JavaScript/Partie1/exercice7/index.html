@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exercice 7 Javascript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form>
+    <label for="pointure">Pointure : </label><input type="text" id="pointure" name="pointure"/><br/>
+    <label for="annee">Année de naissance : </label><input type="text" id="annee" name="annee"/><br/>
+    <button id="valider" onclick="alert(display());" name="valider">Valider</button>
+  </form>
+  <script>
+  /* Fonction qui vérifie que la valeur est bien un nombre, si ce n'est pas le cas elle affiche 'Il faut des nombres' et si
+  c'est le cas elle affichera le résultat du calcul */
+  function display(){
+    var size = document.getElementById('pointure').value;
+    var year = document.getElementById('annee').value;
+    if (isNaN(size) || isNaN(year) || size == '' || year == ''){ // Vérifie si il y a des valeurs et si ce sont des nombres
+      return 'Il faut des nombres';
+    } else{
+      var result = (size * 2 + 5) * 50 - year + 1766; // Si ce sont des nombres le calcul se fait
+      return result;
+    }
+  }
+  </script>
+</body>
+</html>

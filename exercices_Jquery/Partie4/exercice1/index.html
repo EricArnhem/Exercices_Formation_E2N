@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="jquery-2.2.4.js"></script>
+    <title>Exercice 1</title>
+  </head>
+  <body>
+    <form>
+      <select id="choice">
+        <option value="1" id="pierre">Pierre</option>
+        <option value="2" id="feuille">Feuille</option>
+        <option value="3" id="ciseaux">Ciseaux</option>
+      </select>
+      <button type="button" name="shifumi" id="shifumi">Shifumi !</button>
+    </form>
+    <p>Résultat: <span id="result"></span></p>
+    <p>Votre choix / Choix de l'ordinateur: <span id="humanComputer"></span></p>
+    <p>Victoires: <span id="winCount"></span></p>
+    <p>Défaites: <span id="loseCount"></span></p>
+    <p>Pourcentage de Victoire: <span id="winPercent"></span></p>
+    <script>
+    $(function(){
+        choice = $('#choice').val(); // Récupération de la valeur de l'option sélectionnée au départ
+      $("#choice").on('change',function(){ // Récupération de la valeur de l'option sélectionnée au changement
+        choice = $('#choice').val();
+      });
+      var win = 0;
+      var lose = 0;
+      var tries = 0;
+      $('#shifumi').click(function(){
+        var computer = Math.floor(Math.random() * 3) + 1; // Génération d'un chiffre aléatoire entre 1 et 3 au clic du bouton
+        tries++;
+        if(choice == 1 && computer == 2){ // Cas de : Pierre / Feuille (Humain/Ordinateur)
+            $('#result').text('Perdu !');
+            $('#humanComputer').text('Pierre / Feuille');
+            lose++;
+        } else if(choice == 2 && computer == 3){ // Cas de : Feuille / Ciseaux
+            $('#result').text('Perdu !');
+            $('#humanComputer').text('Feuille / Ciseaux');
+            lose++;
+        } else if(choice == 3 && computer == 1){ // Cas de : Ciseaux / Pierre
+            $('#result').text('Perdu !');
+            $('#humanComputer').text('Ciseaux / Pierre');
+            lose++;
+        } else if(choice == 2 && computer == 1){ // Cas de : Feuille / Pierre
+            $('#result').text('Gagné !');
+            $('#humanComputer').text('Feuille / Pierre');
+            win++;
+        } else if(choice == 3 && computer == 2){ // Cas de : Ciseaux / Feuille
+            $('#result').text('Gagné !');
+            $('#humanComputer').text('Ciseaux / Feuille');
+            win++;
+        } else if(choice == 1 && computer == 3){ // Cas de : Pierre / Ciseaux
+            $('#result').text('Gagné !');
+            $('#humanComputer').text('Pierre / Ciseaux');
+            win++;
+        } else if(choice == 1 && computer == 1){
+            $('#result').text('Egalité !'); // Si égalité, affiche 'Egalité'
+            $('#humanComputer').text('Pierre / Pierre');
+        } else if(choice == 2 && computer == 2){
+            $('#result').text('Egalité !'); // Si égalité, affiche 'Egalité'
+            $('#humanComputer').text('Feuille / Feuille');
+        } else if(choice == 3 && computer == 3){
+            $('#result').text('Egalité !'); // Si égalité, affiche 'Egalité'
+            $('#humanComputer').text('Ciseaux / Ciseaux');
+        }
+        var percent = (100 * win) / tries;
+        var percentRound = parseFloat(percent.toFixed(2));
+        $('#loseCount').text(lose);
+        $('#winCount').text(win);
+        $('#winPercent').text(percentRound + '%');
+      });
+    });
+    </script>
+  </body>
+</html>

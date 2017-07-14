@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice Canvas 2</title>
+    <style>
+      canvas{
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="maison" width="400" height="400"></canvas>
+    <a href="../exercice1/index.html"><button type="button" name="button">Exercice 1</button></a>
+    <a href="../exercice3/index.html"><button type="button" name="button">Exercice 3</button></a>
+    <script>
+    // On sélectionne le canvas
+    var c = document.getElementById("maison");
+    // On dit que c'est un canvas en 2d
+    var ctx = c.getContext("2d");
+
+    // Toit
+    ctx.beginPath();
+    ctx.moveTo(200, 100);
+    ctx.lineTo(125, 180);
+    ctx.lineTo(275, 180);
+    ctx.lineTo(200, 100);
+    ctx.fillStyle = "#D38435";
+    ctx.fill();
+
+    // Mur
+    ctx.fillStyle = "#A4D7E7";
+    ctx.fillRect(125, 180, 150, 150);
+
+    // Porte et fenêtres
+    ctx.fillStyle = "#C9C9C9";
+    ctx.fillRect(140, 195, 30, 30);
+    ctx.fillRect(230, 195, 30, 30);
+    ctx.fillRect(180, 270, 40, 60)
+    </script>
+  </body>
+</html>

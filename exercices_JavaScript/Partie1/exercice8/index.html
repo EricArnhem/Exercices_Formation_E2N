@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercice_8</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form>
+            <label for="age">Votre âge : </label><input type="text" id="age" name="age"/><br/>
+            <button id="valider" onclick="display()" name="valider">Valider</button>
+        </form>
+        <script>
+        /* Fonction qui va vérifier si ce qu'on entre est un nombre, si c'est un nombre on va vérifier quel est ce nombre et
+        afficher une alerte en fonction de ce nombre */
+        function display(){
+          var ageText = document.getElementById('age').value;
+          var age = parseInt(ageText);
+          if(isNaN(ageText)){ // Si la valeur entrée n'est pas un nombre on affiche 'Il faut entrer un âge'
+              alert('Il faut entrer un âge');
+          } else if(age <= 0){ // Si l'âge est inférieur à 0 on affiche l'alerte "Vous n'êtes pas encore né.."
+            alert('Vous n\'êtes pas encore né ou vous n\'existez pas encore');
+          } else if(age > 0 && age <= 18){ // On teste si le nombre est > 0 et <= 18 et si oui affiche 'Vous êtes mineur.'
+              alert('Vous êtes mineur.');
+          } else if(age >= 18 && age <= 100){ // On teste si le nombre est entre 18 et 120 et si oui on affiche 'Vous êtes majeur.'
+            alert('Vous êtes majeur.');
+          } else{ // Si le nombre n'est pas dans ces catégories on affiche l'alerte
+            alert('Vous n\'êtes pas encore mort ?')
+          }
+        }
+        </script>
+    </body>
+</html>

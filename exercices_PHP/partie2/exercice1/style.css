@@ -1,0 +1,9 @@
+p{
+    background-color: lightgrey;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 10px;
+    border-left: 3px solid orangered;
+    border-right: 3px solid orangered;
+}

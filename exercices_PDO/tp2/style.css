@@ -1,0 +1,41 @@
+.navbar{
+    border-radius: 0;
+}
+
+h1{
+  background-color: lightgrey;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+.navigation{
+    margin-bottom: 20px;
+}
+
+.div_clients_list{
+    border-bottom: 1px solid grey;
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+.clients_list{
+    padding-top: 10px;
+}
+
+#client_infos{
+    border: 1px solid grey;
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/1617176207601187123/3C8954881330BF4000D47201B2B369DD74B7AEAD/');
+    background-size: cover;
+    color: white;
+    font-size: 16px;
+}
+
+.details_subtitle{
+    text-align: center;
+    background-color: rgba(50, 50, 50, 0.8);
+}
+
+.details_link{
+    float: right;
+    margin-top: -3px;
+}

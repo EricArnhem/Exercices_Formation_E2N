@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercice 4</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <style>
+    .buttons{
+      margin-top: 15px;
+      background-color: blueviolet;
+      width: 310px;
+    }
+    .cars_div{
+      font-family: Helvetica;
+    }
+    p{
+      background-color: lightgrey;
+      border-left: 2px solid blueviolet;
+      padding-left: 10px;
+      width: 305px;
+    }
+    </style>
+  </head>
+  <!-- On initialise l'application avec ng-app et on déclare le contrôleur "carCtrl" -->
+  <body ng-app="carApp" ng-controller="carCtrl">
+    <!-- On répète la div pour le nombre de voitures avec le ng-repeat -->
+    <div class="cars_div" ng-repeat="car in cars | filter: voiture.couleur='!verte'">
+      <!-- On affiche la marque de la voiture et sa couleur -->
+      <p><strong>Marque : </strong>{{car.marque}} <br> <strong>Couleur : </strong>{{car.couleur}}</p>
+    </div>
+
+    <div class="buttons">
+      <a href="../exercice1/index.html"><button>Exercice 1</button></a>
+      <a href="../exercice2/index.html"><button>Exercice 2</button></a>
+      <a href="../exercice3/index.html"><button>Exercice 3</button></a>
+      <a href="../exercice5/index.html"><button>Exercice 5</button></a>
+      <a href="../exercice6/index.html"><button>Exercice 6</button></a>
+    </div>
+
+    <script>
+    var app = angular.module('carApp', []);
+
+    // On défini le contrôleur
+    app.controller('carCtrl', function($scope, $http) {
+      // On va chercher le contenu de voiture.json
+      $http.get('voiture.json')
+        // Si on le récupère avec succès on le stocke dans la variable $scope.cars
+        .then(function(res){
+          $scope.cars = res.data;
+        });
+    });
+    </script>
+  </body>
+</html>
